@@ -1,0 +1,21 @@
+﻿@model IEnumerable<MhEnterPrises.Models.HomeAppliances>
+
+@{
+    ViewData["Title"] = "ListAppliances";
+}
+
+<h1>List of Appliances</h1>
+<hr/>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        { 
+        <div class="col-md-4" style="1px solid grey;">
+            <h1 Align="center">@Html.DisplayFor(modelItem => item.Name)</h1>
+            <p> @Html.DisplayFor(modelItem => item.Price)</p>
+            <a href="@Url.Action("Create","PlaceOrders")" class="btn btn-primary">Buy Now </a>
+        </div>
+        }   
+
+        </div>
+</div>
